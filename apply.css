@@ -1,0 +1,281 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vw 8vw;
+    box-shadow: 2px 2px 11px rgb(207, 51, 51);
+    z-index: 1000;
+}
+
+nav img {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
+nav .navigation {
+    display: flex;
+}
+
+nav .navigation ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav .navigation ul li {
+    list-style: none;
+    margin-left: 25px;
+}
+
+nav .navigation ul li a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+nav .navigation ul li a.active,
+nav .navigation ul li a:hover {
+    color: red;
+}
+
+/* apply button */
+.apply-button {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffffffee;
+    color: rgb(44, 43, 43); /* Keep text color white */
+    font-weight: 600; /* Make the font bold */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: color 0.4s ease;
+}
+
+.apply-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #111111e8; /* Background fill color */
+    z-index: 0;
+    transition: transform 0.3s ease;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+.apply-button:hover::before {
+    transform: scaleX(1);
+}
+
+.apply-button span {
+    position: relative;
+    z-index: 1;
+}
+
+.apply-button:hover {
+    color: #fff; /* Ensure text color remains white */
+}
+
+header.banner {
+    width: 100vw; /* Full viewport width */
+    overflow: hidden;
+    color: white; /* Text color */
+    text-align: center;
+    padding: 110px 0; /* Increased vertical padding for a larger banner */
+    box-sizing: border-box;
+    position: relative; /* Normal flow positioning */
+    z-index: 1; /* Ensures the banner is above other content */
+}
+
+.banner-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the banner area */
+    z-index: 0; /* Place the image behind text and SVG */
+}
+
+header.banner h1 {
+    position: relative;
+    margin: 0;
+    font-size: 62px; /* Adjust font size for larger banner */
+    z-index: 1;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100vw; /* Full viewport width */
+    padding: 20px;
+    box-sizing: border-box; /* Includes padding in width and height calculations */
+    margin-top: 60px; /* Ensure content starts below the banner */
+    margin-bottom: 40px; /* Space below the blocks */
+}
+
+.block {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Left half (logo) and right half (info) */
+    width: 100%;
+    background: #fdfdfd;
+    border: 1px solid #fffefe;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px; /* Added padding to ensure content isn't too close to the border */
+    box-sizing: border-box; /* Ensure padding and border are included in width and height calculations */
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px; /* Added padding for spacing */
+    background: #fdfdfd; /* Optional: add a background color for visual separation */
+    overflow: hidden; /* Ensures logo does not overflow */
+}
+
+.logo {
+    max-width: 100%; /* Ensures the logo takes up the full width of the container */
+    max-height: 80%; /* Ensures the logo does not exceed the container’s height */
+    height: auto; /* Keeps the aspect ratio */
+    object-fit: contain; /* Ensures the logo scales while preserving aspect ratio */
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the start of the container */
+    padding: 20px;
+    background: #fff; /* Ensures that the background is consistent */
+}
+
+h2 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.button {
+    display: inline-block;
+    padding: 8px 16px; /* Reduced button size */
+    font-size: 14px;
+    color: #fff;
+    background-color: red;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.button:hover {
+    background-color: gray;
+}
+
+footer {
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 40px; /* Ensure space between content and footer */
+    border-top: 1px solid #ddd; /* Optional: add a border for visual separation */
+}
+
+.footer-container {
+    max-width: 1200px; /* Optional: limit the max-width for better alignment */
+    margin: 0 auto; /* Center align the footer content */
+}
+
+.footer-top h2 {
+    margin: 0;
+    font-size: 24px;
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: #000;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.social-links i {
+    margin-right: 5px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.footer-column {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.footer-column h3 {
+    margin-top: 0;
+}
+
+.footer-column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer-bottom-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.footer-bottom-links a {
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+}

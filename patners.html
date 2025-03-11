@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade Tower Incubation</title>
+    
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/contact-us.css">
+    <link rel="stylesheet" href="trade.css">
+
+    <style>
+        /* Additional Styles */
+        .scroll-container {
+            display: flex;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scroll-snap-type: x mandatory;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .scroll-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scroll-item {
+            flex: 0 0 auto;
+            margin-right: 1rem;
+            scroll-snap-align: start;
+        }
+
+        .page-title-area {
+            margin: 5em 0;
+            background-color: #ff612f;
+            position: relative;
+            z-index: 1;
+            height: 45vh;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .page-title-content {
+            text-align: center;
+        }
+
+        .page-title-content h2 {
+            color: #ffffff;
+            margin-bottom: 0;
+            padding: 20em;
+            font-size: 50px;
+            font-weight: 600;
+        }
+
+        .page-title-area::before {
+            content: '';
+            position: absolute;
+            top: -2;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            opacity: .6;
+            height: 450px;
+            z-index: -1;
+            background-image: url(assets/img/bg_lines.svg);
+            background-repeat: repeat;
+            background-size: cover;
+        }
+
+        .page-title-content h2 {
+            font-size: 3.5em;
+            color: #fff;
+            text-align: center;
+            padding: 90px;
+        }
+
+        .board-members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            gap: 10px;
+        }
+
+        .member {
+            display: flex;
+            width: 90vh;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding: 20px;
+        }
+
+        .member img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-right: 20px;
+            border: 4px solid #b40000;
+            border-radius: 5px;
+        }
+
+        .member h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+            position: relative;
+        }
+
+        .member h2::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 1px;
+            background-color: #ddd;
+            margin: 10px 0;
+        }
+
+        .member p.position span {
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <img src="assets/img/TT-Logo.jpg" alt="logo" onclick="reload()">
+        <div class="navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">About</a>
+                    <div class="dropdown-content">
+                        <a href="about.html">About Us</a>
+                        <a href="facilities.html">Facilities</a>
+                        <a href="services.html">Services</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Programs</a>
+                    <div class="dropdown-content">
+                        <a href="program.html">Program</a>
+                        <a href="media.html">Media</a>
+                    </div>
+                </li>
+                <li><a href="startup.html">Start Up</a></li>
+                <li><a href="people.html">People</a></li>
+                <li><a class="active" href="patners.html">Partners</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+                <li><a href="apply.html" class="apply-button"><span>Apply for Registration</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Title Area -->
+    <div class="page-title-area" style="background-image:url('assets/img/advisor-banner.jpg');background-position: bottom;">
+        <div class="container">
+            <div class="page-title-content">
+                <h2>Trade Tower Incubation & Partners</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Incubation & Funding Agencies Section -->
+    <section id="portfolios" class="py-16 bg-black text-white text-center">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold">Incubation & Funding Agencies</h2>
+            <div id="incubation-funding-agencies-scroll" class="scroll-container">
+                <div class="scroll-item">
+                    <img src="image/IF Agencies.png" alt="IF" class="rounded-lg shadow-lg">
+                    <h3 class="mt-4 text-xl font-semibold">Agency 1</h3>
+                </div>
+                <!-- Repeat for other items -->
+            </div>
+
+            <h2 class="text-3xl font-bold text-white">Ecosystem Partners</h2>
+            <div id="ecosystem-partners-scroll" class="scroll-container">
+                <div class="scroll-item">
+                    <img src="image/Ecosystem Patners.png" alt="Ecosystem Partner" class="rounded-lg shadow-lg">
+                    <h3 class="mt-4 text-xl font-semibold">Partner 1</h3>
+                </div>
+                <!-- Repeat for other items -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Advisors Section -->
+    <section>
+        <div class="board-members">
+            <div class="member">
+                <img src="assets/img/people/shashank.jpg" alt="Shashank">
+                <div class="info-member">
+                    <h2>Shashank Randev</h2>
+                    <p class="position">Founder - <span>100X.VC</span></p>
+                </div>
+            </div>
+            <!-- Repeat for other advisors -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-area">
+        <div class="footer-container">
+            <div class="footer-top">
+                <h2>Explore. Discover. Connect.</h2>
+                <div class="social-links">
+                    <a href="https://in.linkedin.com/company/tradetower-infizic"><i class="fa-brands fa-linkedin"></i><span>LinkedIn</span></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i><span>Facebook</span></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i><span>Twitter</span></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i><span>Instagram</span></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i><span>YouTube</span></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Main Links</h3>
+                <ul class="services-list">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="programs.html">Program</a></li>
+                    <li><a href="startup.html">Start Up</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                    <li><a href="apply.html">Apply for Registration</a></li>
+                </ul>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Trade Tower Incubation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="trade.js"></script>
+    <script>
+        function reload() {
+            location.reload();
+        }
+    </script>
+</body>
+
+</html>
